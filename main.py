@@ -7,8 +7,7 @@ serverPort = 8080
 
 class MyServer(BaseHTTPRequestHandler):
     """
-        Специальный класс, который отвечает за
-        обработку входящих запросов от клиентов
+        Класс, отвечающий за обработку входящих запросов от клиентов
     """
 
     def __get_html_content(self):
@@ -17,7 +16,9 @@ class MyServer(BaseHTTPRequestHandler):
             return html_content
 
     def do_GET(self):
-        """ Метод для обработки входящих GET-запросов """
+        """
+        Метод для обработки входящих GET-запросов
+        """
         page_content = self.__get_html_content()
         self.send_response(200)
         self.send_header("Content-type", "text/html")
